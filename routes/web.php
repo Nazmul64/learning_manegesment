@@ -35,7 +35,8 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/adminDashboard', [adminDashboard::class, 'adminDashboard'])->name('adminDashboard');
-    Route::get('/adminprofile', [adminDashboard::class, 'adminDashboard'])->name('adminprofile');
+    Route::get('/adminprofile', [adminDashboard::class, 'adminprofile'])->name('adminprofile');
+    Route::POST('/adminprofilechange', [adminDashboard::class, 'adminprofilechange'])->name('adminprofilechange');
 });
 
 Route::middleware(['auth', 'role:instructor'])->group(function () {
