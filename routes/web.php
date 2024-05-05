@@ -37,6 +37,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/adminDashboard', [adminDashboard::class, 'adminDashboard'])->name('adminDashboard');
     Route::get('/adminprofile', [adminDashboard::class, 'adminprofile'])->name('adminprofile');
     Route::POST('/adminprofilechange', [adminDashboard::class, 'adminprofilechange'])->name('adminprofilechange');
+    Route::POST('/adminchangepassword', [adminDashboard::class, 'adminchangepassword'])->name('adminchangepassword');
 });
 
 Route::middleware(['auth', 'role:instructor'])->group(function () {

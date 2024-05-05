@@ -56,6 +56,7 @@ public function adminlogin(){
         $data->address = $request->address;
 
         if ($request->file('photo')) {
+            @unlink(public_path('upload/admin_images/'.$data->photo));
             $file = $request->file('photo');
             $filename = date('YmdHi') . $file->getClientOriginalName();
             $file->move(public_path('upload/admin_images'), $filename);
@@ -69,5 +70,10 @@ public function adminlogin(){
         );
 
         return redirect()->back()->with($notifacation);
+    }
+    public function adminchangepassword(){
+        $id = Auth::user();
+        $profileData = User::find($id);
+        return view('admin.admin_change_password',compact('profileData'));
     }
 }

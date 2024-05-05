@@ -24,7 +24,7 @@
 								<div class="card">
 									<div class="card-body">
 										<div class="d-flex flex-column align-items-center text-center">
-											<img src="{{ (!empty($profileData->photo))  ? url('uploads/admin_images/'.$profileData->photo)  : url('uploads/avator.jpg')}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+											<img src="{{ (!empty($profileData->photo))  ? url('upload/admin_images/'.$profileData->photo)  : url('upload/avator.jpg')}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
 											<div class="mt-3">
 												<h4>{{ Auth::user()->name }}</h4>
 												<p class="text-secondary mb-1">{{ Auth::user()->username }}</p>
@@ -93,7 +93,7 @@
 											<div class="col-sm-3">
 											</div>
 											<div class="col-sm-9 text-secondary">
-													<img id="showImage" src="{{ (!empty($profileData->photo))  ? url('uploads/admin_images/'.$profileData->photo)  : url('uploads/avator.jpg')}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+													<img id="showImage" src="{{ (!empty($profileData->photo))  ? url('upload/admin_images/'.$profileData->photo)  : url('upload/avator.jpg')}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
 											</div>
 										</div>
 										<div class="row">
