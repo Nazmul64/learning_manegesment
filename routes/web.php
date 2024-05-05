@@ -37,11 +37,15 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/adminDashboard', [adminDashboard::class, 'adminDashboard'])->name('adminDashboard');
     Route::get('/adminprofile', [adminDashboard::class, 'adminprofile'])->name('adminprofile');
     Route::POST('/adminprofilechange', [adminDashboard::class, 'adminprofilechange'])->name('adminprofilechange');
-    Route::POST('/adminchangepassword', [adminDashboard::class, 'adminchangepassword'])->name('adminchangepassword');
+    Route::get('admin/password', [adminDashboard::class, 'adminpassword'])->name('admin.password');
+    Route::POST('admin/password/update', [adminDashboard::class, 'adminpasswordupdate'])->name('admin.password.update');
 });
 
 Route::middleware(['auth', 'role:instructor'])->group(function () {
     Route::get('/instructorDashboard', [instructorDashboard::class, 'instructorDashboard'])->name('instructorDashboard');
+    Route::get('/instructorDashboard', [instructorDashboard::class, 'instructorDashboard'])->name('instructorDashboard');
 });
 Route::get('/adminlogin', [adminDashboard::class, 'adminlogin'])->name('adminlogin');
 Route::get('/adminlogout', [adminDashboard::class, 'adminlogout'])->name('adminlogout');
+Route::get('/instructorlogout', [adminDashboard::class, 'instructorlogout'])->name('instructorlogout');
+
