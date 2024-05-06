@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminDashboard;
 use App\Http\Controllers\instructorDashboard;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\Role;
 
 /*
@@ -17,10 +18,10 @@ use App\Http\Middleware\Role;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [UserController::class, 'index'])->name('index');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -43,7 +44,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 Route::middleware(['auth', 'role:instructor'])->group(function () {
     Route::get('/instructorDashboard', [instructorDashboard::class, 'instructorDashboard'])->name('instructorDashboard');
-    Route::get('/instructorDashboard', [instructorDashboard::class, 'instructorDashboard'])->name('instructorDashboard');
+    Route::get('/instructroprofile', [instructorDashboard::class, 'instructroprofile'])->name('instructroprofile');
+    Route::POST('/instructroprofileupdate', [adminDashboard::class, 'instructroprofileupdate'])->name('instructroprofileupdate');
 });
 Route::get('/adminlogin', [adminDashboard::class, 'adminlogin'])->name('adminlogin');
 Route::get('/adminlogout', [adminDashboard::class, 'adminlogout'])->name('adminlogout');
