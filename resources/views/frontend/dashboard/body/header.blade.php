@@ -210,7 +210,11 @@
                                                     </li>
                                                     <li>
                                                         <ul class="generic-list-item">
-
+                                                            <li>
+                                                                <a href="{{ route('user.profile') }}">
+                                                                    <i class="la la-edit mr-1"></i>profile
+                                                                </a>
+                                                            </li>
                                                             <li>
                                                                 <a href="shopping-cart.html">
                                                                     <i class="la la-shopping-basket mr-1"></i> My cart
@@ -223,11 +227,7 @@
                                                             </li>
 
 
-                                                            <li>
-                                                                <a href="dashboard-settings.html">
-                                                                    <i class="la la-edit mr-1"></i> Edit profile
-                                                                </a>
-                                                            </li>
+
                                                             <li><div class="section-block"></div></li>
 
                                                             <li>
@@ -236,15 +236,7 @@
                                                                 </a>
                                                             </li>
                                                             <li><div class="section-block"></div></li>
-                                                            <li>
-                                                                <a href="#" class="position-relative">
-                                                                    <span class="fs-17 font-weight-semi-bold d-block">Aduca for Business</span>
-                                                                    <span class="lh-20 d-block fs-14 text-gray">Bring learning to your company</span>
-                                                                    <span class="position-absolute top-0 right-0 mt-3 mr-3 fs-18 text-gray">
-                                                                    <i class="la la-external-link"></i>
-                                                                </span>
-                                                                </a>
-                                                            </li>
+
                                                         </ul>
                                                     </li>
                                                 </ul>

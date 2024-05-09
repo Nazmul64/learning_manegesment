@@ -5,7 +5,11 @@
     <meta name="author" content="TechyDevs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="{{ asset('frontend/css/tooltipster.bundle.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <!-- end inject -->
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
     <title>Aduca -  Education HTML Template</title>
 
     <!-- Google fonts -->
@@ -215,5 +219,8 @@
 <script src="{{ asset('frontend/js/tooltipster.bundle.min.js')}}"></script>
 <script src="{{ asset('frontend/js/jquery.lazy.min.js')}}"></script>
 <script src="{{ asset('frontend/js/main.js')}}"></script>
+<script src="{{ asset('frontend/js/tooltipster.bundle.min.js') }}"></script>
+<script src="{{ asset('frontend/js/jquery.lazy.min.js') }}"></script>
+<script src="{{ asset('frontend/js/main.js') }}"></script>
 </body>
 </html>
