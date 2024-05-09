@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminDashboard;
 use App\Http\Controllers\instructorDashboard;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Middleware\Role;
 
 /*
@@ -54,4 +55,12 @@ Route::middleware(['auth', 'role:instructor'])->group(function () {
 Route::get('/adminlogin', [adminDashboard::class, 'adminlogin'])->name('adminlogin');
 Route::get('/adminlogout', [adminDashboard::class, 'adminlogout'])->name('adminlogout');
 Route::get('/instructorlogout', [adminDashboard::class, 'instructorlogout'])->name('instructorlogout');
+
+
+// Cagegory All Route
+Route::controller(CategoryController::class)->group(function(){
+    Route::get('/all/category', 'Allcategory')->name('all.category');
+    Route::get('/add/category', 'Addcategory')->name('add.category');
+    Route::get('/add/category', 'Addcategory')->name('add.category');
+});
 

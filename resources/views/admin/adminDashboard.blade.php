@@ -26,7 +26,13 @@
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/dark-theme.css')}}"/>
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/semi-dark.css')}}"/>
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/header-colors.css')}}"/>
-	<title>Admin Dashboard</title>
+    <!-- Theme Style CSS -->
+
+    <!-- bootstrap5 Style CSS -->
+    	<link href="{{ asset('backend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
+	<!-- bootstrap5 Style CSS -->
+
+	<title>Admin</title>
 </head>
 
 <body>
@@ -81,7 +87,14 @@
 		new PerfectScrollbar(".app-container")
 	</script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
+    	<!--app JS-->
+  	<script src="{{ asset('backend/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+	<script src="{{ asset('backend/assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
+	<script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
 <script>
  @if(Session::has('message'))
  var type = "{{ Session::get('alert-type','info') }}"
